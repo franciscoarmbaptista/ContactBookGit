@@ -20,6 +20,7 @@ public class ContactBook {
         return searchIndex(name) >= 0;
     }
 
+
     public int getNumberOfContacts() {
         return counter;
     }
@@ -93,12 +94,12 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
-    public Contact getContact(int phone){
+    public String getName(int phone){
         initializeIterator();
         while( hasNext() ) {
             Contact c = next();
             if (c.getPhone() == phone)
-                return c;
+                return c.getName();
         }
         return null;
     }
